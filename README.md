@@ -28,7 +28,5 @@ Android 7.0 и новее. Архитектуры `arm64-v8a` и `x86_64`.
 
 ## Исходники
 
-Автор форка TG WS Breakwall для Android — **a1deus**.
-
 - [Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy/tree/6690b788432fd0f59b0f38e228494bcd6bede1ca) 1.11.4. Python-ядро включено в `app/src/main/python/proxy` с адаптацией запуска обновления списка Cloudflare. Лицензия MIT включена в APK.
 - [amurcanov/tg-ws-proxy-android](https://github.com/amurcanov/tg-ws-proxy-android/tree/540e588d15fbdf806f694fbe0b952ff044d39a07) использован как функциональный референс.
