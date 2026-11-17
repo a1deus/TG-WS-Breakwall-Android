@@ -1,0 +1,219 @@
+Manifest-Version: 1.0
+
+Name: AndroidManifest.xml
+SHA-256-Digest: rS15sRbmzYdqzzft8oafrv8STYzM+EB5ypi9lOf9XrI=
+
+Name: META-INF/com/android/build/gradle/app-metadata.properties
+SHA-256-Digest: ggL3wuTGOALmCjd8r9dnvKSDcHFrl82pCpHIq5bO+UE=
+
+Name: META-INF/version-control-info.textproto
+SHA-256-Digest: ONN3r6drY2Tlv1Uc9P/sGogaRhAqAEf1I/vxSODfaSg=
+
+Name: assets/chaquopy/app.imy
+SHA-256-Digest: LLxBx2pP6+TjIr6htwDG46teptdlsdMnfgq5jnyi6EY=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_bz2.cpython-313-aarc
+ h64-linux-android.so
+SHA-256-Digest: NSST/s1dxuYvc3y6aRc4ah0R+6dHK6ZFjUvz6tVyZgw=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_ctypes.cpython-313-a
+ arch64-linux-android.so
+SHA-256-Digest: S84ztNxaBn/FCFmp/smJdJdSo6nS42hiGSW2E1TUCko=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_datetime.cpython-313
+ -aarch64-linux-android.so
+SHA-256-Digest: DLNXevaicBvMf+seZ17Mve+Iu4DqfUbLO/5dd789Zz4=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_lzma.cpython-313-aar
+ ch64-linux-android.so
+SHA-256-Digest: Y9kkgSTSlJpekEGbsi28b0CsYq0Ohrfr5J0LSIsjM04=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_opcode.cpython-313-a
+ arch64-linux-android.so
+SHA-256-Digest: 8jof/m0R4p0UAPehXDx+TCKe7PG4gSxvSh8NWo7qR+4=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_random.cpython-313-a
+ arch64-linux-android.so
+SHA-256-Digest: J0SnIDvGJ+kY2c26MyrfAIkWqXaL3PsltaRI1hNLSKg=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/_struct.cpython-313-a
+ arch64-linux-android.so
+SHA-256-Digest: +upFQBp2G13LEMk7RR+Rlr9/ujjCkt/rIU6qfaUb5RY=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/binascii.cpython-313-
+ aarch64-linux-android.so
+SHA-256-Digest: uSj+3ZwbblVZP/0y/xadbGhLOLnlH97XmxJZetaapQg=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/java/chaquopy.so
+SHA-256-Digest: JP3s5G9E1aADcZEjXTP3ANZc1nYXQrdH3XWUxbwJJK0=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/math.cpython-313-aarc
+ h64-linux-android.so
+SHA-256-Digest: zvMkLOVcmuaE93bN0iclP8NstFhVvrAaHxgusZy7EVQ=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/mmap.cpython-313-aarc
+ h64-linux-android.so
+SHA-256-Digest: STD+BQgi9FTY9V/gzyGFM9N7TXJgcs8w7dk5LiIY6c4=
+
+Name: assets/chaquopy/bootstrap-native/arm64-v8a/zlib.cpython-313-aarc
+ h64-linux-android.so
+SHA-256-Digest: dMbrF0Edc2im8CIxnLUZn3Lae1CKFN4/ZO77kSCMdNI=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_bz2.cpython-313-x86_64-
+ linux-android.so
+SHA-256-Digest: s8z2PX1JJRyftpFEjshK6QVN23a+eejQx+KPRhIOAEw=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_ctypes.cpython-313-x86_
+ 64-linux-android.so
+SHA-256-Digest: lH04ref9knrEMRZuo4iFBSimsyLovHaAC0PAdvIxGEY=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_datetime.cpython-313-x8
+ 6_64-linux-android.so
+SHA-256-Digest: 1l7Dh8Mx1j2BqxOAEgkxYBxIrKaFnSDyk+1aBE0AC2c=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_lzma.cpython-313-x86_64
+ -linux-android.so
+SHA-256-Digest: s/2thXYcxJWXnrjNvBHMlujWXQcrxTFymNyNFm5RQqk=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_opcode.cpython-313-x86_
+ 64-linux-android.so
+SHA-256-Digest: ZKDr0px7PgG6AiyMicQ6jqxfF3F9J8Y8dfYE6gP4Ti0=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_random.cpython-313-x86_
+ 64-linux-android.so
+SHA-256-Digest: dOCj0gEXTWiLhccNKEsGMljqRXQtstwxNuyvfXN1QcU=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/_struct.cpython-313-x86_
+ 64-linux-android.so
+SHA-256-Digest: Jo0wbWBC0LL7ms7XUybWX2+IHmXS3G9ugoyqNuQx5d8=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/binascii.cpython-313-x86
+ _64-linux-android.so
+SHA-256-Digest: /nyoHAVKlbnC6fQgTBw3U8vT6gkyiNzzY7rxUeYQJwY=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/java/chaquopy.so
+SHA-256-Digest: ygTmLC14+q3sTt7QjBmfNc9iv69P3fIm3yQMIt5y77o=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/math.cpython-313-x86_64-
+ linux-android.so
+SHA-256-Digest: i9bpOsJMJLmxvlhlpOg4HbUyC7HJG1WxCQFfqR/OJ7k=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/mmap.cpython-313-x86_64-
+ linux-android.so
+SHA-256-Digest: dziF76twDZFGO5LrUf7VCfsXKUE+jeg0QT2jHAH3PAE=
+
+Name: assets/chaquopy/bootstrap-native/x86_64/zlib.cpython-313-x86_64-
+ linux-android.so
+SHA-256-Digest: Z+kNrKjm5DQ6fqmT1s9gxbKxH/OaoHc2Oa1EXJ/NJ98=
+
+Name: assets/chaquopy/bootstrap.imy
+SHA-256-Digest: f5uvSS9vVf+vkt5JLiObfU6OXKegqzoHaYo19BNJUnY=
+
+Name: assets/chaquopy/build.json
+SHA-256-Digest: ZMyWnMrZA/XUNOinQ1IPWaR/vlQIEow0qSIUghIzbHg=
+
+Name: assets/chaquopy/cacert.pem
+SHA-256-Digest: LvUq1WtIA+JkBFyRXlXCNsv6BFuEuB7+/CGKGetEvSs=
+
+Name: assets/chaquopy/requirements-arm64-v8a.imy
+SHA-256-Digest: p1/cqVBtZ5ZSlEMp5lqF0Ghpxlp/yupu1mp4m18hBGw=
+
+Name: assets/chaquopy/requirements-common.imy
+SHA-256-Digest: PIw/8TRAUKcY13F4EqhcmE5BGGCmMMkNnsA5xe/7fzU=
+
+Name: assets/chaquopy/requirements-x86_64.imy
+SHA-256-Digest: HNaUF4bE9eApRkVt1B3XRkC6YTcrKD+YfIJVOMKdpuI=
+
+Name: assets/chaquopy/stdlib-arm64-v8a.imy
+SHA-256-Digest: 2zrEYqkAAU8m4c4aGQFRz7afg8h8RZ7l7qx+sqVAdpU=
+
+Name: assets/chaquopy/stdlib-common.imy
+SHA-256-Digest: FwlCaHqBA1BYkgKmW07jtLTGNExd3XUM3vNatstycGY=
+
+Name: assets/chaquopy/stdlib-x86_64.imy
+SHA-256-Digest: thSpk6cHUYAq/7Ze+bDH7ZTb1hxkvmYA9C67Za20Vjw=
+
+Name: assets/licenses/Flowseal-MIT.txt
+SHA-256-Digest: KpglbfBgUsOxMs9SLjVtqQreL3Sbb3Q1982v0dkSP6I=
+
+Name: classes.dex
+SHA-256-Digest: ihHht81lZXE6oUFzyFgHrC/dPwCVXklnRpt/IDug9LM=
+
+Name: classes2.dex
+SHA-256-Digest: udeSoYJco8K50Qo3PrJ8ZyNJZoyt6ryhwjinT7ugx3Q=
+
+Name: lib/arm64-v8a/libchaquopy_java.so
+SHA-256-Digest: r8knoHu2Lt0QgxXtBi/lJ2Ap576+aSRl+pWuF//x46I=
+
+Name: lib/arm64-v8a/libcrypto_chaquopy.so
+SHA-256-Digest: dmwXRLMtpiTKeNOZaAa0NjHygiJXa6gLtWiOXDBB8L4=
+
+Name: lib/arm64-v8a/libcrypto_python.so
+SHA-256-Digest: 4Tc0N3N3YDzanC6m1hcfxNY52KB2gFCooizao7QPDs4=
+
+Name: lib/arm64-v8a/libpython3.13.so
+SHA-256-Digest: cFMbf2+YcinkmplxwdtlQLg36Ky2o55ktPOw3Drx4RI=
+
+Name: lib/arm64-v8a/libpython3.so
+SHA-256-Digest: 2hOeXuVdzLhh4ieJZIOmkfWyhexlB04mOTVTvQd4IYg=
+
+Name: lib/arm64-v8a/libsqlite3_chaquopy.so
+SHA-256-Digest: HjSNzu+cRnVOa+FPKljm00RBr7A5dLNvoHEPjuUOvy0=
+
+Name: lib/arm64-v8a/libsqlite3_python.so
+SHA-256-Digest: 6MnCYBIkShdQE9FxiKZTAKvtuUa9lZtbWfwZtj37krk=
+
+Name: lib/arm64-v8a/libssl_chaquopy.so
+SHA-256-Digest: Ak16dpbniUQ2QmRd81kpmUqopKPLTUay/nQV1k+aIoI=
+
+Name: lib/arm64-v8a/libssl_python.so
+SHA-256-Digest: xU474NIcQ9kIsIkdjId1eF9ARcFo0hEFtyhPiJU4OUQ=
+
+Name: lib/x86_64/libchaquopy_java.so
+SHA-256-Digest: 4NCuhE5n2XFUbLWYGG82aTmB+rSRptt/4j8LVOo4Wvk=
+
+Name: lib/x86_64/libcrypto_chaquopy.so
+SHA-256-Digest: tYLJ7eeyHha/vQWtetb8Qo54UDWm8iKBCpvuUpZrbmY=
+
+Name: lib/x86_64/libcrypto_python.so
+SHA-256-Digest: bqCHtAtl3rQMybF2PoI7WonyOnVw5yNBGWgykJn8Ud0=
+
+Name: lib/x86_64/libpython3.13.so
+SHA-256-Digest: n8aEYLiqDyyHxfssYuMmsxpKBTHTdIMTb4kaQn9mlqw=
+
+Name: lib/x86_64/libpython3.so
+SHA-256-Digest: 1UW+W79krq9/XRNAb+0CUERW+PCDmbWlInqnMB2EGFk=
+
+Name: lib/x86_64/libsqlite3_chaquopy.so
+SHA-256-Digest: +6pmkU4JceEZxQ5+yj34WT0cWc3Bx7BFgVuL8G8YaO4=
+
+Name: lib/x86_64/libsqlite3_python.so
+SHA-256-Digest: A/vFhmJrqhlSvfupP0OuTxH5ZcYT0yl4R0L03U+XkXo=
+
+Name: lib/x86_64/libssl_chaquopy.so
+SHA-256-Digest: Sj8pB76FT68afe+SCUieZQRaClL7EICqawr4X+rDT+4=
+
+Name: lib/x86_64/libssl_python.so
+SHA-256-Digest: PzO4Ih1Kjv4PCJHZWz4p84Il41qeTOclwdmnYBzxPvk=
+
+Name: res/4j.xml
+SHA-256-Digest: NeGYWzEV7e8AdlQP+8pxmFPeZLgKiJKEfKI8C9i6ob8=
+
+Name: res/6T.png
+SHA-256-Digest: kVl8vqrORFij9p2D24mhnosVidR7DFTHDc/H8EKgke8=
+
+Name: res/BW.xml
+SHA-256-Digest: tRPp/Q+KghgIc6xizG6C3U44Z4fIqkLLUM5gMjdXqEM=
+
+Name: res/E4.xml
+SHA-256-Digest: YdRTjLhEBKnv8secfS834rRupiJYaYAyQvyVN0bgpSE=
+
+Name: res/Mv.xml
+SHA-256-Digest: 2V3iSOehB+D1NAJomMHK6taXZYSYa8YrROKAvEmaY9E=
+
+Name: res/yK.xml
+SHA-256-Digest: OCovLg6mvch0vBmC8wvEFccxKb9KOr1qWa/9SHX/Mag=
+
+Name: resources.arsc
+SHA-256-Digest: we5M5fRat402zfFrH7smZk/eITXubRal8dIbvFx7H5c=
+
