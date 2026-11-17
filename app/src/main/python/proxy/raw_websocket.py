@@ -3,6 +3,7 @@ import logging
 import base64
 import struct
 import asyncio
+import ssl
 import socket as _socket
 
 from typing import List, Optional, Tuple
@@ -25,6 +26,25 @@ _XOR_TABLES = tuple(bytes(value ^ key for value in range(256)) for key in range(
 
 _ssl_ctx = create_ssl_context()
 _ssl_ctx_fronting = create_ssl_context(check_hostname=False)
+
+
+def _verify_fronted_peer(writer: asyncio.StreamWriter, domain: str) -> None:
+    # The TLS chain was verified at connect. Check the HTTP host
+    # against the peer certificate separately from the alternate SNI.
+    tls = writer.get_extra_info('ssl_object')
+    certificate = tls.getpeercert() if tls is not None else None
+    hostname = domain.rstrip('.').lower()
+    label, separator, remainder = hostname.partition('.')
+    wildcard = '*.' + remainder if label and separator else None
+    if certificate:
+        for kind, name in certificate.get('subjectAltName', ()):
+            if kind != 'DNS':
+                continue
+            dns_name = name.rstrip('.').lower()
+            if dns_name == hostname or dns_name == wildcard:
+                return
+    raise ssl.CertificateError(f"WebSocket peer certificate does not match {domain}")
+
 
 class WsHandshakeError(Exception):
     def __init__(self, status_code: int, status_line: str,
@@ -93,7 +113,8 @@ class RawWebSocket:
     async def connect(host: str, domain: str, timeout: float = 10.0,
                       path: str = '/apiws', *,
                       sni: Optional[str] = None, secure = True) -> 'RawWebSocket':
-        ssl_context = _ssl_ctx_fronting if sni else _ssl_ctx
+        fronted = sni is not None and sni != domain
+        ssl_context = _ssl_ctx_fronting if fronted else _ssl_ctx
 
         if sni is None:
             sni = domain
@@ -112,6 +133,8 @@ class RawWebSocket:
         )
         
         try:
+            if secure and fronted:
+                _verify_fronted_peer(writer, domain)
             set_sock_opts(writer.transport, proxy_config.buffer_size)
 
             ws_key = base64.b64encode(os.urandom(16)).decode()

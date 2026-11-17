@@ -248,7 +248,7 @@ final class AppUpdates {
         request.setReadTimeout(25_000);
         request.setInstanceFollowRedirects(false);
         request.setUseCaches(false);
-        request.setRequestProperty("User-Agent", "TG-WS-Breakwall/" + BuildConfig.VERSION_NAME);
+        request.setRequestProperty("User-Agent", "TG-WS-Breakwall");
         request.setRequestProperty("Accept", accept);
         request.setRequestProperty("Accept-Encoding", "identity");
         return request;

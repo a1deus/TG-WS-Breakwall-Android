@@ -39,6 +39,9 @@ import java.util.Locale;
 public final class MainActivity extends Activity {
     private static final String[] TABS = {"Прокси", "Настройки", "Журнал", "Информация"};
     private static final int INSTALL_PERMISSION_REQUEST = 1444;
+    private static final String[] TELEGRAM_PACKAGES = {
+            "org.telegram.messenger", "org.telegram.messenger.web"
+    };
     private final Handler main = new Handler();
     private final Runnable ticker = new Runnable() {
         @Override public void run() {
@@ -249,6 +252,8 @@ public final class MainActivity extends Activity {
         if (ProxyService.active()) {
             add(content, text("Новые настройки применятся после перезапуска прокси.", 14, muted, false), 9);
         }
+        add(content, button("Политика конфиденциальности", false,
+                () -> startActivity(new Intent(this, PrivacyActivity.class))), 8);
     }
 
     private void updateAction() {
@@ -407,11 +412,16 @@ public final class MainActivity extends Activity {
     private void openTelegram() {
         ProxySettings current = ProxyService.runningSettings;
         if (current == null) return;
-        try {
-            startActivity(new Intent(Intent.ACTION_VIEW, current.link()));
-        } catch (ActivityNotFoundException exc) {
-            toast("Установите Telegram или добавьте прокси вручную по скопированной ссылке.");
+        Uri link = current.link();
+        for (String telegramPackage : TELEGRAM_PACKAGES) {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, link).setPackage(telegramPackage));
+                return;
+            } catch (ActivityNotFoundException ignored) {
+                // Try the other official distribution.
+            }
         }
+        toast("Для другого клиента скопируйте ссылку и добавьте прокси вручную.");
     }
 
     private void clipboard(String name, String value, boolean sensitive) {
