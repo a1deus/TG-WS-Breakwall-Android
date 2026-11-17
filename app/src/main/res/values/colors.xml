@@ -1,0 +1,8 @@
+<resources>
+    <color name="breakwall_background">#080808</color>
+    <color name="breakwall_surface">#151515</color>
+    <color name="breakwall_foreground">#FFFFFF</color>
+    <color name="breakwall_secondary">#BBBBBB</color>
+    <color name="breakwall_border">#464646</color>
+    <color name="breakwall_pressed">#387F7F7F</color>
+</resources>
