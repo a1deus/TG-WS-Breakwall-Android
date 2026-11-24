@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.util.Linkify;
+import android.text.method.LinkMovementMethod;
 import android.view.WindowInsets;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -37,9 +37,9 @@ public final class PrivacyActivity extends Activity {
         addSection(content, R.string.privacy_routes_title, R.string.privacy_routes);
         addSection(content, R.string.privacy_updates_title, R.string.privacy_updates);
         addSection(content, R.string.privacy_controls_title, R.string.privacy_controls);
-        TextView contact = addSection(content, R.string.privacy_contact_title, R.string.privacy_contact);
-        Linkify.addLinks(contact, Linkify.WEB_URLS);
-        contact.setLinkTextColor(getColor(R.color.breakwall_foreground));
+        TextView policies = addSection(content, R.string.privacy_external_title, R.string.privacy_external);
+        policies.setMovementMethod(LinkMovementMethod.getInstance());
+        policies.setLinkTextColor(getColor(R.color.breakwall_foreground));
     }
 
     private TextView addSection(LinearLayout content, int heading, int body) {
@@ -49,14 +49,14 @@ public final class PrivacyActivity extends Activity {
         headingParams.topMargin = dp(18);
         content.addView(title, headingParams);
 
-        TextView detail = policyText(getString(body), 15, false);
+        TextView detail = policyText(getText(body), 15, false);
         LinearLayout.LayoutParams bodyParams = new LinearLayout.LayoutParams(-1, -2);
         bodyParams.topMargin = dp(5);
         content.addView(detail, bodyParams);
         return detail;
     }
 
-    private TextView policyText(String label, int size, boolean heading) {
+    private TextView policyText(CharSequence label, int size, boolean heading) {
         TextView text = new TextView(this);
         text.setText(label);
         text.setTextSize(size);

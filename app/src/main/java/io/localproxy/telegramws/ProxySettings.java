@@ -15,10 +15,10 @@ final class ProxySettings {
             "(?i)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?");
     final int port, pool;
     final String secret, dc, domains, workers;
-    final boolean cloudflare, h2, testDc, debug;
+    final boolean cloudflare, h2, testDc, debug, httpFallback;
 
     ProxySettings(int port, int pool, String secret, String dc, String domains, String workers,
-                  boolean cloudflare, boolean h2, boolean testDc, boolean debug) {
+                  boolean cloudflare, boolean h2, boolean testDc, boolean debug, boolean httpFallback) {
         this.port = port;
         this.pool = pool;
         this.secret = secret;
@@ -29,6 +29,7 @@ final class ProxySettings {
         this.h2 = h2;
         this.testDc = testDc;
         this.debug = debug;
+        this.httpFallback = httpFallback;
     }
 
     private static SharedPreferences prefs(Context context) {
@@ -46,7 +47,7 @@ final class ProxySettings {
                 secret, prefs.getString("dc", DEFAULT_DC), prefs.getString("domains", ""),
                 prefs.getString("workers", ""), prefs.getBoolean("cloudflare", false),
                 prefs.getBoolean("h2", true), prefs.getBoolean("testDc", false),
-                prefs.getBoolean("debug", false));
+                prefs.getBoolean("debug", false), prefs.getBoolean("httpFallback", false));
     }
 
     static String newSecret() {
@@ -97,7 +98,8 @@ final class ProxySettings {
         prefs(context).edit().putInt("port", port).putInt("pool", pool).putString("secret", secret)
                 .putString("dc", dc).putString("domains", domains).putString("workers", workers)
                 .putBoolean("cloudflare", cloudflare).putBoolean("h2", h2)
-                .putBoolean("testDc", testDc).putBoolean("debug", debug).apply();
+                .putBoolean("testDc", testDc).putBoolean("debug", debug)
+                .putBoolean("httpFallback", httpFallback).apply();
     }
 
     ProxySettings usingPort(Context context, int actualPort) {
@@ -107,7 +109,7 @@ final class ProxySettings {
             prefs.edit().putInt("port", actualPort).apply();
         }
         return new ProxySettings(actualPort, pool, secret, dc, domains, workers,
-                cloudflare, h2, testDc, debug);
+                cloudflare, h2, testDc, debug, httpFallback);
     }
 
     String json() {
@@ -115,7 +117,7 @@ final class ProxySettings {
             return new JSONObject().put("port", port).put("pool", pool).put("secret", secret)
                     .put("dc", dc).put("domains", domains).put("workers", workers)
                     .put("cloudflare", cloudflare).put("h2", h2).put("testDc", testDc)
-                    .put("debug", debug).toString();
+                    .put("debug", debug).put("httpFallback", httpFallback).toString();
         } catch (JSONException exc) {
             throw new IllegalStateException(exc);
         }

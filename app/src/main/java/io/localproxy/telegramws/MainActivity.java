@@ -59,7 +59,7 @@ public final class MainActivity extends Activity {
     private AppUpdates updates;
     private boolean installWhenReady, resumed;
     private EditText port, pool, secret, dc, domains, workers;
-    private Switch cf, h2, testDc, debug;
+    private Switch cf, h2, testDc, debug, httpFallback;
     private long visibleLogVersion = -1;
 
     @Override public void onCreate(Bundle state) {
@@ -132,6 +132,7 @@ public final class MainActivity extends Activity {
         state.putBoolean("h2", h2.isChecked());
         state.putBoolean("testDc", testDc.isChecked());
         state.putBoolean("debug", debug.isChecked());
+        state.putBoolean("httpFallback", httpFallback.isChecked());
     }
 
     private void restoreDraft(Bundle state) {
@@ -144,6 +145,7 @@ public final class MainActivity extends Activity {
         h2.setChecked(state.getBoolean("h2"));
         testDc.setChecked(state.getBoolean("testDc"));
         debug.setChecked(state.getBoolean("debug"));
+        httpFallback.setChecked(state.getBoolean("httpFallback"));
     }
 
     private void show(int selected) {
@@ -238,6 +240,9 @@ public final class MainActivity extends Activity {
         h2 = switchField(routing, "HTTP/2 для медиа через Cloudflare", current.h2);
         workers = field(routing, "Собственные Cloudflare Workers", current.workers,
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI, true);
+        httpFallback = switchField(routing, "HTTP fallback для Cloudflare и Workers", current.httpFallback);
+        add(routing, text("При тайм-ауте TLS разрешает соединение по HTTP. Шифрование MTProto сохраняется, "
+                + "но TLS-защита транспортного соединения снимается.", 13, muted, false), 4);
         testDc = switchField(routing, "Тестовые датацентры Telegram", current.testDc);
         cf.setOnCheckedChangeListener((button, checked) -> {
             domains.setEnabled(checked);
@@ -252,8 +257,6 @@ public final class MainActivity extends Activity {
         if (ProxyService.active()) {
             add(content, text("Новые настройки применятся после перезапуска прокси.", 14, muted, false), 9);
         }
-        add(content, button("Политика конфиденциальности", false,
-                () -> startActivity(new Intent(this, PrivacyActivity.class))), 8);
     }
 
     private void updateAction() {
@@ -349,12 +352,17 @@ public final class MainActivity extends Activity {
         LinearLayout app = card();
         app.addView(text(getString(R.string.app_name), 22, ink, true));
         add(app, text("Версия " + BuildConfig.VERSION_NAME, 14, muted, false), 4);
-        add(app, text("a1deus", 17, ink, true), 16);
-        add(app, text("Автор форка для Android", 14, muted, false), 4);
+        add(app, text("Ядро Flowseal 1.12.0", 14, muted, false), 4);
+        add(app, button(getString(R.string.privacy_title), false,
+                () -> startActivity(new Intent(this, PrivacyActivity.class))), 12);
 
         LinearLayout sources = card();
         sources.addView(text("Авторы и исходники", 18, ink, true));
-        add(sources, text("Flowseal", 17, ink, true), 13);
+        add(sources, text("a1deus", 17, ink, true), 13);
+        add(sources, text("Автор приложения TG WS Breakwall", 14, muted, false), 4);
+        add(sources, button("Исходный код", false,
+                () -> openSource("https://github.com/a1deus/TG-WS-Breakwall-Android")), 8);
+        add(sources, text("Flowseal", 17, ink, true), 17);
         add(sources, text("Автор оригинального проекта и ядра tg-ws-proxy", 14, muted, false), 4);
         add(sources, button("Flowseal/tg-ws-proxy", false,
                 () -> openSource("https://github.com/Flowseal/tg-ws-proxy")), 8);
@@ -379,7 +387,8 @@ public final class MainActivity extends Activity {
             int selectedPool = ProxySettings.number(fieldValue(pool), 0, 16, "Размер пула");
             ProxySettings revised = new ProxySettings(selectedPort, selectedPool,
                     fieldValue(secret).toLowerCase(Locale.ROOT), fieldValue(dc), fieldValue(domains),
-                    fieldValue(workers), cf.isChecked(), h2.isChecked(), testDc.isChecked(), debug.isChecked());
+                    fieldValue(workers), cf.isChecked(), h2.isChecked(), testDc.isChecked(), debug.isChecked(),
+                    httpFallback.isChecked());
             revised.save(this);
             toast(ProxyService.active() ? "Сохранено. Перезапустите прокси для применения." : "Настройки сохранены");
         } catch (IllegalArgumentException exc) {

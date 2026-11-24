@@ -8,7 +8,7 @@
     <string name="privacy_updates_title">Проверка и установка обновлений</string>
     <string name="privacy_updates">По запросу пользователя приложение обращается к публичным релизам GitHub по HTTPS. GitHub и его серверы загрузки получают сетевые сведения о запросе, включая исходящий IP. Настройки прокси, секрет, журнал и идентификаторы устройства в запрос обновления не добавляются. Скачанный APK хранится в кэше приложения. После проверки версии и подписи приложение передаёт его системному установщику Android для подтверждения.</string>
     <string name="privacy_controls_title">Управление данными</string>
-    <string name="privacy_controls">Cloudflare по умолчанию выключен. Чтобы прекратить работу прокси, остановите его в приложении. Журнал можно очистить во вкладке «Журнал». Очистка данных приложения в настройках Android удаляет сохранённые настройки и секрет.</string>
-    <string name="privacy_contact_title">Связь с автором</string>
-    <string name="privacy_contact">Вопросы по приложению можно оставить в репозитории https://github.com/a1deus/TG-WS-Breakwall-Android/issues</string>
+    <string name="privacy_controls">Cloudflare и HTTP fallback по умолчанию выключены. Если включить HTTP fallback, при тайм-ауте TLS приложение может подключиться к Cloudflare или Worker по HTTP. Шифрование MTProto сохраняется, но TLS-защита транспортного соединения снимается. Чтобы прекратить работу прокси, остановите его в приложении. Журнал можно очистить во вкладке «Журнал». Очистка данных приложения в настройках Android удаляет сохранённые настройки и секрет.</string>
+    <string name="privacy_external_title">Политики сторонних сервисов</string>
+    <string name="privacy_external"><a href="https://telegram.org/privacy">Политика конфиденциальности Telegram</a>\n<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Политика конфиденциальности GitHub</a>\n<a href="https://www.cloudflare.com/privacypolicy/">Политика конфиденциальности Cloudflare</a></string>
 </resources>

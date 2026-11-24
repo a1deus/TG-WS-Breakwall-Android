@@ -59,6 +59,7 @@ def run(payload, sink):
     proxy_config.cfproxy_user_domains = coerce_domain_list(settings["domains"])
     proxy_config.cfproxy_worker_domains = coerce_domain_list(settings["workers"])
     proxy_config.cfproxy_h2_media = settings["h2"]
+    proxy_config.allow_insecure_cf_fallback = settings.get("httpFallback", False)
     proxy_config.force_test_dc = settings["testDc"]
     stats.__init__()
 
